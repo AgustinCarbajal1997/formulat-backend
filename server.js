@@ -5,6 +5,7 @@ const numCPUs = require("os").cpus().length;
 const cors = require("cors");
 const multer = require("multer");
 const storage = require("./src/config/multer");
+const config = require("./src/config/config");
 const invalidRequest = require("./src/controllers/error.controllers");
 const { blog, auth, user, formula1 } = require("./src/routes");
 const { loggerConsole } = require("./src/loggers/config");
@@ -28,7 +29,7 @@ if (!cluster.isWorker) {
   app.use("/api/blog", blog);
   app.use("/api/formula1", formula1);
   app.use(invalidRequest);
-  app.listen(8080, () => {
+  app.listen(config.port, () => {
     loggerConsole.info("Server successfully running on port");
   });
 }

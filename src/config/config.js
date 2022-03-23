@@ -1,6 +1,6 @@
 require("dotenv").config();
 module.exports = {
-  //   port: process.env.PORT || 3000,
+  port: process.env.PORT || 8080,
   mongoDb: {
     connectionStr: process.env.MONGO_STR,
   },
