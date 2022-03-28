@@ -1,6 +1,7 @@
 const cloudinary = require("../config/cloudinary");
 const Factory = require("../dao/factory");
 const fs = require("fs-extra");
+const sanitizeString = require("string-sanitizer");
 const getAllNews = async (page, limit, pagination) => {
   try {
     const options = {
@@ -84,7 +85,8 @@ const getNewsBySlug = async (slug) => {
 
 const generalSearch = async (q, page, limit, pagination) => {
   try {
-    const regexList = q.map((item) => new RegExp(`${item}`, "i"));
+    let querySanitized = q.map(item => sanitizeString.sanitize(item));
+    const regexList = querySanitized.map((item) => new RegExp(`${item}`, "i"));
     const query = {
       title: { $all: regexList },
     };
@@ -101,6 +103,7 @@ const generalSearch = async (q, page, limit, pagination) => {
 
 const obtainSeveralIds = async (ids, page, limit, pagination) => {
   try {
+    let querySanitized = ids.map(item => sanitizeString.sanitize(item));
     const options = {
       page,
       limit,
@@ -108,7 +111,7 @@ const obtainSeveralIds = async (ids, page, limit, pagination) => {
       sort: { createdAt: -1 },
     };
     const data = await Factory.models("blog").getByQuery(
-      { _id: { $in: ids } },
+      { _id: { $in: querySanitized } },
       options
     );
     return data;
@@ -194,6 +197,7 @@ const deleteNews = async (id) => {
 
 const getComments = async (ids, page, limit, pagination) => {
   try {
+    let querySanitized = ids.map(item => sanitizeString.sanitize(item));
     const options = {
       page,
       limit,
@@ -201,7 +205,7 @@ const getComments = async (ids, page, limit, pagination) => {
       sort: { createdAt: -1 },
       populate: "author",
     };
-    const query = { _id: { $in: ids } };
+    const query = { _id: { $in: querySanitized } };
     const data = await Factory.models("comment").getByQuery(query, options);
     return data;
   } catch (error) {

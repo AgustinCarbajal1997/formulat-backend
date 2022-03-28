@@ -1,1 +1,40 @@
 [2022-03-23T16:41:03.608] [ERROR] logError - Status:403, message:Incorrect user or passsword
+[2022-03-27T20:12:57.044] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:57.671] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:57.753] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:57.852] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:58.408] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:58.607] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:58.695] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:12:58.846] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:00.265] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:00.439] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:00.582] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:00.716] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:00.854] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:00.996] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:01.124] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:01.944] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:02.224] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:02.350] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:02.454] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:03.173] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:04.990] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:05.220] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:05.470] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:13:06.605] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:14:14.677] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:14:14.927] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:14:15.027] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:14:29.561] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:14:29.808] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:16:14.921] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:16:44.933] [ERROR] logError - Status:500, message:console.logo is not a function
+[2022-03-27T20:45:32.065] [ERROR] logError - Status:500, message:dompurify.sanitize is not a function
+[2022-03-27T20:45:32.217] [ERROR] logError - Status:500, message:dompurify.sanitize is not a function
+[2022-03-27T20:45:48.308] [ERROR] logError - Status:500, message:dompurify.sanitize is not a function
+[2022-03-27T20:45:48.718] [ERROR] logError - Status:500, message:dompurify.sanitize is not a function
+[2022-03-27T20:45:48.859] [ERROR] logError - Status:500, message:dompurify.sanitize is not a function
+[2022-03-27T20:48:13.046] [ERROR] logError - Status:500, message:dompurify.sanitize is not a function
+[2022-03-27T20:56:21.371] [ERROR] logError - Status:500, message:Invalid regular expression: /onError=(>/: Unterminated group
+[2022-03-27T21:03:58.112] [ERROR] logError - Status:403, message:Mail already exists
