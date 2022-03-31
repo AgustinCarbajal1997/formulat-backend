@@ -26,7 +26,6 @@ const getData = async (type, page, limit, pagination) => {
       page,
       limit,
       pagination,
-      sort: { createdAt: -1 },
     };
     let data = await Factory.models(MODELS[type]).getAll(options);
     return data;
