@@ -1,1 +1,15 @@
 
+[2022-04-03T22:11:15.033] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:11:21.508] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:11:21.552] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:11:21.701] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:11:21.831] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:15:19.132] [ERROR] logError - Status:500, message:Operation `blogs.countDocuments()` buffering timed out after 10000ms
+[2022-04-03T22:15:19.133] [ERROR] logError - Status:500, message:Operation `blogs.countDocuments()` buffering timed out after 10000ms
+[2022-04-03T22:15:19.145] [ERROR] logError - Status:500, message:Operation `blogs.countDocuments()` buffering timed out after 10000ms
+[2022-04-03T22:15:24.620] [ERROR] logError - Status:500, message:Operation `drivers.countDocuments()` buffering timed out after 10000ms
+[2022-04-03T22:16:16.213] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:16:28.536] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:16:28.606] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:16:28.614] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[2022-04-03T22:16:28.656] [ERROR] logError - Something gone wrong. The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.

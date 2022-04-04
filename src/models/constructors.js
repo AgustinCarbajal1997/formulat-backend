@@ -41,6 +41,11 @@ const constructorSchema = new mongoose.Schema({
     required: true,
     default: "0",
   },
+  driverChampionships: {
+    type: String,
+    required: true,
+    default: "0",
+  },
   teamPrincipal: {
     type: String,
     required: true,

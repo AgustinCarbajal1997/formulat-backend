@@ -41,6 +41,11 @@ const driverSchema = new mongoose.Schema({
     required: true,
     default: "0",
   },
+  podiums: {
+    type: String,
+    required: true,
+    default: "0",
+  },
   birthDate: {
     type: Date,
     required: true,

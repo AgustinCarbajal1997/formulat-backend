@@ -51,6 +51,8 @@ const postData = async (req, res) => {
     firstDriver,
     secondDriver,
     teamPrincipal,
+    driverChampionships,
+    podiums
   } = req.body;
   try {
     const data = await formula1.postData(
@@ -68,6 +70,8 @@ const postData = async (req, res) => {
         firstDriver,
         secondDriver,
         teamPrincipal,
+        driverChampionships,
+        podiums
       },
       req.file
     );

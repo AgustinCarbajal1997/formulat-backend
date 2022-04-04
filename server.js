@@ -19,7 +19,7 @@ if (!cluster.isWorker) {
     loggerConsole.info("Pid process has terminated:", process.pid);
   });
 } else {
-  app.use(cors({ origin:"https://formulat.online" }));
+  app.use(cors());
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
   app.use(multer({ storage }).single("image"));
