@@ -6,7 +6,7 @@ const getF1DataApi = async (req, res) => {
     const data = await formula1.getF1DataApi(endPoint);
     return res.status(data.status).json(data);
   } catch (error) {
-    errorHandle(res, error)
+    errorHandle(res, error);
   }
 };
 
@@ -22,7 +22,7 @@ const getData = async (req, res) => {
     );
     return res.status(data.status).json(data);
   } catch (error) {
-    errorHandle(res, error)
+    errorHandle(res, error);
   }
 };
 
@@ -32,12 +32,13 @@ const getDataBySlug = async (req, res) => {
     let data = await formula1.getDataBySlug(type, slug);
     return res.status(data.status).json(data);
   } catch (error) {
-    errorHandle(res, error)
+    errorHandle(res, error);
   }
 };
 
 const postData = async (req, res) => {
   const { type } = req.params;
+  console.log("body", req.body);
   const {
     name,
     team,
@@ -52,7 +53,7 @@ const postData = async (req, res) => {
     secondDriver,
     teamPrincipal,
     driverChampionships,
-    podiums
+    podiums,
   } = req.body;
   try {
     const data = await formula1.postData(
@@ -71,13 +72,13 @@ const postData = async (req, res) => {
         secondDriver,
         teamPrincipal,
         driverChampionships,
-        podiums
+        podiums,
       },
       req.file
     );
     return res.status(data.status).json(data);
   } catch (error) {
-    errorHandle(res, error)
+    errorHandle(res, error);
   }
 };
 const putData = async (req, res) => {
@@ -95,6 +96,8 @@ const putData = async (req, res) => {
     firstDriver,
     secondDriver,
     teamPrincipal,
+    driverChampionships,
+    podiums,
   } = req.body;
   try {
     const data = await formula1.putData(
@@ -113,12 +116,14 @@ const putData = async (req, res) => {
         firstDriver,
         secondDriver,
         teamPrincipal,
+        driverChampionships,
+        podiums,
       },
       req.file
     );
     return res.status(data.status).json(data);
   } catch (error) {
-    errorHandle(res, error)
+    errorHandle(res, error);
   }
 };
 
@@ -135,7 +140,7 @@ const deleteData = async (req, res) => {
     );
     return res.status(data.status).json(data);
   } catch (error) {
-    errorHandle(res, error)
+    errorHandle(res, error);
   }
 };
 

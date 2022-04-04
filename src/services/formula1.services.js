@@ -44,6 +44,7 @@ const getDataBySlug = async (type, slug) => {
 };
 
 const postData = async (type, newData, image) => {
+  console.log("newData desde service",newData)
   try {
     const imageUploaded = await cloudinary.v2.uploader.upload(image.path);
     const data = await Factory.models(MODELS[type]).save({
