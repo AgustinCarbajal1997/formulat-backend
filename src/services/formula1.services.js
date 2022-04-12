@@ -2,6 +2,10 @@ const Factory = require("../dao/factory");
 const END_POINTS = require("../utils/urls_f1_public_api");
 const axios = require("axios").default;
 const cloudinary = require("../config/cloudinary");
+const marked = require("marked");
+const createDomPurify = require("dompurify");
+const { JSDOM } = require("jsdom");
+const dompurify = createDomPurify(new JSDOM().window);
 const fs = require("fs-extra");
 const MODELS = {
   pilotos: "driver",
@@ -44,7 +48,7 @@ const getDataBySlug = async (type, slug) => {
 };
 
 const postData = async (type, newData, image) => {
-  console.log("newData desde service",newData)
+  console.log("newData desde service", newData);
   try {
     const imageUploaded = await cloudinary.v2.uploader.upload(image.path);
     const data = await Factory.models(MODELS[type]).save({
@@ -60,6 +64,11 @@ const postData = async (type, newData, image) => {
 };
 
 const putData = async (type, id, newData, image) => {
+  if (newData.descriptionMarkdown) {
+    newData.sanitizedHtml = dompurify.sanitize(
+      marked.parse(newData.descriptionMarkdown)
+    );
+  }
   try {
     const deleteImage = await Factory.models(MODELS[type]).getById(id);
     await cloudinary.v2.uploader.destroy(deleteImage.data.public_id);

@@ -2,6 +2,10 @@ const cloudinary = require("../config/cloudinary");
 const Factory = require("../dao/factory");
 const fs = require("fs-extra");
 const sanitizeString = require("string-sanitizer");
+const marked = require("marked");
+const createDomPurify = require("dompurify");
+const { JSDOM } = require("jsdom");
+const dompurify = createDomPurify(new JSDOM().window);
 const getAllNews = async (page, limit, pagination) => {
   try {
     const options = {
@@ -85,7 +89,7 @@ const getNewsBySlug = async (slug) => {
 
 const generalSearch = async (q, page, limit, pagination) => {
   try {
-    let querySanitized = q.map(item => sanitizeString.sanitize(item));
+    let querySanitized = q.map((item) => sanitizeString.sanitize(item));
     const regexList = querySanitized.map((item) => new RegExp(`${item}`, "i"));
     const query = {
       title: { $all: regexList },
@@ -103,7 +107,7 @@ const generalSearch = async (q, page, limit, pagination) => {
 
 const obtainSeveralIds = async (ids, page, limit, pagination) => {
   try {
-    let querySanitized = ids.map(item => sanitizeString.sanitize(item));
+    let querySanitized = ids.map((item) => sanitizeString.sanitize(item));
     const options = {
       page,
       limit,
@@ -164,15 +168,15 @@ const likeNews = async (userId, articleId) => {
   }
 };
 const putNews = async (id, article, image) => {
+  if (article.markdown) {
+    article.sanitizedHtml = dompurify.sanitize(marked.parse(article.markdown));
+  }
   try {
     const deleteImage = await Factory.models("blog").getById(id);
     await cloudinary.v2.uploader.destroy(deleteImage.data.public_id);
     const imageUploaded = await cloudinary.v2.uploader.upload(image.path);
     const query = {
-      title: article.title,
-      creditImage: article.creditImage,
-      description: article.description,
-      markdown: article.markdown,
+      ...article,
       image: imageUploaded.secure_url,
       public_id: imageUploaded.public_id,
     };
@@ -197,7 +201,7 @@ const deleteNews = async (id) => {
 
 const getComments = async (ids, page, limit, pagination) => {
   try {
-    let querySanitized = ids.map(item => sanitizeString.sanitize(item));
+    let querySanitized = ids.map((item) => sanitizeString.sanitize(item));
     const options = {
       page,
       limit,
